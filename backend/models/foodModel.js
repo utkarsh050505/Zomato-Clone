@@ -17,6 +17,10 @@ const foodSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Path `category` is required.'],
   },
+  image: {
+    type: String,
+    required: [true, 'Path `image` is required.'],
+  }
 });
 
 const foodModel = mongoose.model('food', foodSchema);
