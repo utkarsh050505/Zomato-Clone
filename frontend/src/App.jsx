@@ -1,6 +1,6 @@
 import React  from 'react'
 import Navbar from './components/Navbar/Navbar' 
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, Navigate } from 'react-router-dom'
 import { useState } from 'react'
 
 import Home from './pages/Home/home'
@@ -22,7 +22,7 @@ const [showLogin,setShowLogin] =useState(false)
     <Route path='/' element={<Home/>}/>
     <Route path='/cart' element={<Cart/>}/>
     <Route path='/Order' element={<PlaceOrder/>}/>
-
+    <Route path='/Zomato-Clone' element={<Navigate to='/'/>} />
 </Routes>
     </div>
     <Footer />
