@@ -22,7 +22,7 @@ const [showLogin,setShowLogin] =useState(false)
     <Route path='/' element={<Home/>}/>
     <Route path='/cart' element={<Cart/>}/>
     <Route path='/Order' element={<PlaceOrder/>}/>
-    <Route path='/Zomato-Clone' element={<Navigate to='/'/>} />
+    <Route path='/cart#explore-menu' element={<Navigate to='/#explore-menu'/>} />
 </Routes>
     </div>
     <Footer />
