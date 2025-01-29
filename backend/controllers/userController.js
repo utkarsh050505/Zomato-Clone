@@ -28,10 +28,7 @@ const loginUser = async (req, res) => {
 
 // Create JWT token
 const createToken = (id) => {
-    if (!process.env.JWT_SECRET) {
-        throw new Error("JWT_SECRET is not defined in the environment variables");
-    }
-    return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "1d" }); // Token expires in 1 day
+    return jwt.sign({ id }, process.env.JWT_SECRET);
 };
 
 // Register user
