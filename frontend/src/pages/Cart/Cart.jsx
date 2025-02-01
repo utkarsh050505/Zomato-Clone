@@ -4,9 +4,9 @@ import { StoreContext } from '../../Context/StoreContext'
 import { useNavigate } from 'react-router-dom';
 const Cart = () => {
 
-  const { cartItems, food_list, removeFromCart,getTotalCartAmount } = useContext(StoreContext);
+  const { cartItems, food_list, removeFromCart,getTotalCartAmount, url } = useContext(StoreContext);
 
-  const navigate =useNavigate
+  const navigate = useNavigate();
   return (
     <div className='cart'>
 
@@ -24,10 +24,10 @@ const Cart = () => {
         {food_list.map((item, index) => {
           if (cartItems[item._id] > 0) {
             return (
-              <>
+              <React.Fragment key={item._id}>
                 <div className="cart-items-title cart-items-item">
 
-                  <img src={item.image} alt="" />
+                  <img src={url + "/images/" + item.image} alt="" />
                   <p>{item.name}</p>
                   <p>${item.price}</p>
                   <p>{cartItems[item._id]}</p>
@@ -35,8 +35,7 @@ const Cart = () => {
                   <p onClick={()=>removeFromCart(item._id)} className='cross'>x</p>
                 </div>
                 <hr />
-              </>
-
+              </React.Fragment>
             )
           }
 
