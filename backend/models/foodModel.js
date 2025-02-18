@@ -20,8 +20,14 @@ const foodSchema = new mongoose.Schema({
   image: {
     type: String,
     required: [true, 'Path `image` is required.'],
+  },
+  // Associate each food item with a restaurant
+  restaurant: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "restaurant",
+    required: [true, "Every food item must belong to a restaurant."],
   }
 });
 
-const foodModel = mongoose.model('food', foodSchema);
-export default foodModel
+const foodModel = mongoose.models.food || mongoose.model("food", foodSchema);
+export default foodModel;
