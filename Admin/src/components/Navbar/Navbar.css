@@ -11,3 +11,20 @@
 .navbar .profile{
     width: 40px;
 }
+
+.navbar .right-section {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adds spacing between profile and button */
+}
+
+.navbar button {
+    background: transparent;
+    font-size: 16px;
+    color: #49557e;
+    border: 1px solid tomato;
+    padding: 10px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
